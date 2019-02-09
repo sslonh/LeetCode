@@ -1,8 +1,8 @@
 /**
   * Problem: 965. Univalued Binary Tree
+  * Difficulty: Medium
   * Link: https://leetcode.com/problems/univalued-binary-tree/
-  * Runtime: 68 ms
-  * 100%
+  * Runtime: 68 ms, faster than 100.00%
 */
 var isUnivalTree = function(root) {
     if (!root) return true;
