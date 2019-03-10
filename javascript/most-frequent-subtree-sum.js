@@ -3,7 +3,7 @@
   * Difficulty: Medium
   * Link: https://leetcode.com/problems/most-frequent-subtree-sum/
   * Runtime: 72 ms, faster than 100%
-  * Space: 38 MB, less than 100%
+  * Space: 37.9 MB, less than 100%
 */
 var findFrequentTreeSum = function(root) {
     if (!root) return [];
@@ -23,11 +23,13 @@ var findFrequentTreeSum = function(root) {
     traverse(root);
     
     map.forEach((val,key) => {
-       if (val > max) max = val; 
+       if (val > max) {
+           max = val;
+           results = [key];
+       } else if (val == max) {
+           results.push(key);
+       }
     });
-    map.forEach((val,key) => {
-       if (val == max) results.push(key); 
-    });
-    
+
     return results;
 };
